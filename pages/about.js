@@ -6,13 +6,21 @@ import MuiLink from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import ProTip from '../src/ProTip';
 import Link from '../src/Link';
+import { connect, useSelector, useDispatch } from "react-redux";
 
 function Copyright() {
+  const {foo} = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  function handleClick() {
+    dispatch({type: 'FOO', payload: '666'});
+  }
+
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="textSecondary" align="center" onClick={handleClick}>
       {'Copyright © '}
       <MuiLink color="inherit" href="https://material-ui.com/">
-        Your Website
+        {foo}
       </MuiLink>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -20,19 +28,18 @@ function Copyright() {
   );
 }
 
-export default function About() {
+function About(props) {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
         <Button variant="contained" color="primary" component={Link} naked href="/">
           Go to the main page
         </Button>
-        <ProTip />
-        <Copyright />
+        <ProTip/>
+        <Copyright/>
       </Box>
     </Container>
   );
 }
+
+export default About;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import Layout from "../components/Layout";
 
 function fetcher(url) {
   return fetch(url).then(r => r.json());
@@ -12,8 +13,6 @@ export default function Index() {
     `/api/randomQuote${query.author ? '?author=' + query.author : ''}`,
     fetcher
   );
-  // The following line has optional chaining, added in Next.js v9.1.5,
-  // is the same as `data && data.author`
   const author = data?.author;
   let quote = data?.quote;
 
@@ -21,11 +20,12 @@ export default function Index() {
   if (error) quote = 'Failed to fetch the quote.';
 
   return (
-    <main className="center">
-      <div className="quote">{quote}</div>
-      {author && <span className="author">- {author}</span>}
+    <Layout>
+      <main className="center">
+        <div className="quote">{quote}</div>
+        {author && <span className="author">- {author}</span>}
 
-      <style jsx>{`
+        <style jsx>{`
         main {
           width: 90%;
           max-width: 900px;
@@ -44,6 +44,7 @@ export default function Index() {
           font-size: 20px;
         }
       `}</style>
-    </main>
+      </main>
+    </Layout>
   );
 }

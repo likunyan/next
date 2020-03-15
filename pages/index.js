@@ -6,6 +6,7 @@ export default function Index() {
   return (
     <Layout>
       <main>
+        <h2>Nav</h2>
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -38,7 +39,7 @@ export default function Index() {
       </footer>
       <style jsx>{`
         main {
-          margin-top: 10px;
+          margin: 10px;
         }
         main > a {
           padding: 10px;

@@ -6,7 +6,7 @@ import MuiLink from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import ProTip from '../src/ProTip';
 import Link from '../src/Link';
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 function Copyright() {
   const {foo} = useSelector(state => state);

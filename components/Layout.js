@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
+import AppBar from "../components/AppBar";
 import utilStyles from "../styles/utils.module.css";
 import styles from "./layout.module.css";
 
@@ -10,7 +11,7 @@ export const siteTitle = "滑稽实验室";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,6 +28,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
         <title>滑稽实验室</title>
       </Head>
+      <AppBar />
       <header className={styles.header}>
         {home ? (
           <>
@@ -64,6 +66,6 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-    </div>
+    </>
   );
 }

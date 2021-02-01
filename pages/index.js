@@ -1,6 +1,3 @@
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import Link from "next/link";
 import { useEffect } from "react";
 import React from "react";
@@ -9,9 +6,6 @@ import { bindActionCreators } from "redux";
 
 import Layout from "../components/Layout";
 import Page from "../components/Page";
-import Copyright from "../src/Copyright";
-import MuiLink from "../src/Link";
-import ProTip from "../src/ProTip";
 import { addCount } from "../store/count/action";
 import { wrapper } from "../store/store";
 import { serverRenderClock, startClock } from "../store/tick/action";
@@ -27,18 +21,6 @@ const Index = (props) => {
 
   return (
     <Layout>
-      <Container maxWidth="sm">
-        <Box sx={{ my: 4 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Next.js v5-alpha example
-          </Typography>
-          <MuiLink href="/about" color="secondary">
-            Go to the about page
-          </MuiLink>
-          <ProTip />
-          <Copyright />
-        </Box>
-      </Container>
       <Page title="Index Page" linkTo="/other" />
       <main>
         <h2>Nav</h2>

@@ -1,16 +1,15 @@
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = {
   env: {
-    apiUrl: 'https://api.233.sx',
-    NEXT_EXAMPLE_TEST:
-    process.env.NEXT_EXAMPLE_TEST,
+    apiUrl: "https://api.233.sx",
+    NEXT_APP_NAME: process.env.NEXT_APP_NAME,
   },
-  webpack: config => {
+  webpack: (config) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
-      fs: 'empty'
+      fs: "empty",
     };
-    return config
-  }
+    return config;
+  },
 };

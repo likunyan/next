@@ -11,11 +11,10 @@ import { wrapper } from "../store/store";
 
 export const cache = createCache({ key: "css", prepend: true });
 
-function MyApp(props) {
+function App(props) {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
-    // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -25,11 +24,10 @@ function MyApp(props) {
   return (
     <CacheProvider value={cache}>
       <Head>
-        <title>My page</title>
+        <title>滑稽实验室</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
@@ -37,9 +35,9 @@ function MyApp(props) {
   );
 }
 
-MyApp.propTypes = {
+App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
 
-export default wrapper.withRedux(MyApp);
+export default wrapper.withRedux(App);

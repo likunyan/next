@@ -1,10 +1,12 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
 
-const name = 'antic'
-export const siteTitle = '滑稽实验室'
+import utilStyles from "../styles/utils.module.css";
+import styles from "./layout.module.css";
+
+const name = "antic";
+export const siteTitle = "滑稽实验室";
 
 export default function Layout({ children, home }) {
   return (
@@ -63,5 +65,5 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  )
+  );
 }

@@ -1,6 +1,7 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Layout from '../components/Layout.js';
+import { useRouter } from "next/router";
+import React from "react";
+
+import Layout from "../components/Layout.js";
 
 const Content = () => {
   const router = useRouter();

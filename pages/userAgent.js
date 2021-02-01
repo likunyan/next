@@ -1,16 +1,13 @@
-import React from 'react';
-import Layout from '../components/Layout';
+import React from "react";
 
-const userAgent = ({userAgent}) => (
-    <Layout>
-        Hello World {userAgent}
-    </Layout>
-);
+import Layout from "../components/Layout";
 
-userAgent.getInitialProps = async ({req}) => {
-    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
+const userAgent = ({ userAgent }) => <Layout>Hello World {userAgent}</Layout>;
 
-    return {userAgent}
+userAgent.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
+
+  return { userAgent };
 };
 
-export default userAgent
+export default userAgent;

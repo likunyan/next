@@ -1,9 +1,9 @@
-import { tickActionTypes } from './action'
+import { tickActionTypes } from "./action";
 
 const tickInitialState = {
   lastUpdate: 0,
   light: false,
-}
+};
 
 export default function reducer(state = tickInitialState, action) {
   switch (action.type) {
@@ -11,8 +11,8 @@ export default function reducer(state = tickInitialState, action) {
       return Object.assign({}, state, {
         lastUpdate: action.ts,
         light: !!action.light,
-      })
+      });
     default:
-      return state
+      return state;
   }
 }

@@ -1,11 +1,12 @@
-import React from 'react';
-import fetch from 'isomorphic-unfetch';
-import Layout from '../components/Layout';
+import fetch from "isomorphic-unfetch";
+import React from "react";
+
+import Layout from "../components/Layout";
 
 const tvPost = (props) => (
   <Layout>
     <h1>{props.show.name}</h1>
-    <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
+    <p>{props.show.summary.replace(/<[/]?p>/g, "")}</p>
     <img src={props.show.image.medium} />
   </Layout>
 );

@@ -3,5 +3,5 @@
 // open /api/preview from your browser.
 export default (req, res) => {
   res.setPreviewData({});
-  res.end('Preview mode enabled')
-}
+  res.end("Preview mode enabled");
+};
